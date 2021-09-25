@@ -4,6 +4,8 @@ const username = "jrocca82";
 const repoList = document.querySelector(".repo-list");
 const reposInfo = document.querySelector(".repos");
 const repoData = document.querySelector(".repo-data");
+const backButton = document.querySelector(".view-repos");
+const filterInput = document.querySelector(".filter-repos");
 
 
 //Fetch profile data
@@ -41,6 +43,7 @@ const fetchRepos = async function(){
 
 //Display repos
 const displayRepos = function(repos){
+  filterInput.classList.remove("hide");
   for (const repo of repos){
     const repoItem = document.createElement("li");
     repoItem.classList.add("repo");
@@ -69,8 +72,8 @@ const getRepoInfo = async function (repoName){
 
 //Languages Array
   const languages = [];
-    for (key in languageData){
-      languages.push(languageData);
+    for (const language in languageData){
+      languages.push(language);
     }
 
   displayRepoInfo(repoInfo, languages);
@@ -81,6 +84,7 @@ const displayRepoInfo = function(repoInfo, languages){
   repoData.innerHTML = "";
   repoData.classList.remove("hide");
   reposInfo.classList.add("hide");
+  backButton.classList.remove("hide");
   const repoDiv = document.createElement("div");
   repoDiv.innerHTML = `
     <h3>Name: ${repoInfo.name}</h3>
@@ -91,3 +95,24 @@ const displayRepoInfo = function(repoInfo, languages){
     `;
     repoData.append(repoDiv);
 };
+
+backButton.addEventListener("click", function(){
+  reposInfo.classList.remove("hide");
+  repoData.classList.add("hide");
+  backButton.classList.add("hide");
+});
+
+filterInput.addEventListener("input", function(e){
+  const userInput = e.target.value;
+  const repos = document.querySelectorAll(".repo");
+  const searchTextLower = userInput.toLowerCase();
+
+  for (const repo of repos){
+    const lowerText = repo.innerText.toLowerCase();
+    if (lowerText.includes(searchTextLower)){
+      repo.classList.remove("hide");
+    } else {
+      repo.classList.add("hide");
+    }
+  }
+});
