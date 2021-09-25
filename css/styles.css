@@ -7,10 +7,10 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Josefin Slab", serif;
     background-color: #525252;
     color: #525252;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .hide {
@@ -48,7 +48,7 @@ h1 {
     margin: 0;
     font-size: 3.5em;
     text-align: center;
-    font-family: "Oswald", sans-serif;
+    font-family: "Quicksand", sans-serif;
     background-color: #43d6d6;
     color: #fff;
     text-transform: uppercase;

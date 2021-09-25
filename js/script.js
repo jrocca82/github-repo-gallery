@@ -28,6 +28,7 @@ const displayProfile = function(getProfile){
     <div>
       <p><strong>Name:</strong> ${getProfile.name}</p>
       <p><strong>Bio:</strong> ${getProfile.bio}</p>
+      <p><strong>Email:</strong> info@roccabusiness.com</p>
       <p><strong>Number of public repos:</strong> ${getProfile.public_repos}</p>
     </div>`;
     profileOverview.append(profileDiv);
