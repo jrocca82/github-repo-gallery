@@ -8,8 +8,8 @@ body {
     justify-content: center;
     margin: 0;
     font-family: "Open Sans", sans-serif;
-    background-color: #fbf9de;
-    color: #333;
+    background-color: #525252;
+    color: #525252;
     font-size: 16px;
 }
 
@@ -18,16 +18,23 @@ body {
     display: none !important;
 }
 
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .view-repos {
     margin-top: 1.5em;
     padding: 0.5em 1em;
     cursor: pointer;
-    align-self: center;
+    font-weight: bolder;
     width: 300px;
+    background-color: #43d6d6;
 }
 
 .fa-github-alt {
-    color: #f86d58;
+    color: #525252;
 }
 
 img {
@@ -42,7 +49,7 @@ h1 {
     font-size: 3.5em;
     text-align: center;
     font-family: "Oswald", sans-serif;
-    background-color: #483978;
+    background-color: #43d6d6;
     color: #fff;
     text-transform: uppercase;
     border-top-left-radius: 20px;
@@ -64,7 +71,7 @@ h1 {
 .circle {
     width: 20px;
     height: 20px;
-    background-color: #483978;
+    background-color: #43d6d6;
     border-radius: 100%;
     z-index: 99;
     align-self: center;
@@ -80,7 +87,7 @@ h1 {
 h3 {
     width: 100%;
     text-align: center;
-    color: #f86d58;
+    color: #fb8a87;
 }
 
 ul {
@@ -107,7 +114,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #483978;
+    background-color: #43d6d6;
     color: white;
     font-size: 18px;
     padding-bottom: 2em;
@@ -209,12 +216,12 @@ section.repo-data {
     margin-top: 2em;
     cursor: pointer;
     display: block;
-    background-color: #483978;
+    background-color: #fb8a87;
     border: 1px solid #483978;
 }
 
 .repo-data .visit:hover {
-    background-color: #2f2550;
+    background-color: #f95a56;
     border: 1px solid #ccc;
 }
 
@@ -225,10 +232,22 @@ section.repo-data {
     padding-bottom: 2em;
 }
 
+.view-repos:hover{
+  background-color: #29bdbd;
+}
+
 .view-repos {
     max-width: 200px;
     margin-top: 0;
 }
+
+.repo-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
 
 @media (min-width: 700px) {
     .user-info div {

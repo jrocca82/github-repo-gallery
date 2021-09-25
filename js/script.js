@@ -86,12 +86,18 @@ const displayRepoInfo = function(repoInfo, languages){
   reposInfo.classList.add("hide");
   backButton.classList.remove("hide");
   const repoDiv = document.createElement("div");
+  repoDiv.classList.add("repo-container")
   repoDiv.innerHTML = `
+  <div class="repo-info">
     <h3>Name: ${repoInfo.name}</h3>
     <p>Description: ${repoInfo.description}</p>
     <p>Default Branch: ${repoInfo.default_branch}</p>
     <p>Languages: ${languages.join(", ")}</p>
+  </div>
+  <div class="external-links">
     <a class="visit" href="${repoInfo.html_url}" target="_blank" rel="noreferrer noopener">View Repo on GitHub!</a>
+    <a class="visit" href="https://jrocca82.github.io/${repoInfo.name}/" target="_blank">See this Repo in action</a>
+  </div>
     `;
     repoData.append(repoDiv);
 };
